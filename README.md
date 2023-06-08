@@ -53,7 +53,7 @@ df.rename(columns={'Sub Topic': 'Sub_Topic'}, inplace=True)
 
 3. For encoding the strings column into interger we use enumerate whole categorical columns and transform it to interger, the other columns will be transform into strings
 
-````python
+```python
 top_dict = dict(enumerate(df["Topics"].astype('category').cat.categories))
 subtop_dict = dict(enumerate(df["Sub_Topic"].astype('category').cat.categories))
 ptype_dict = dict(enumerate(df["Project_Type"].astype('category').cat.categories))
@@ -68,6 +68,40 @@ for col in string_col:
   df[col] = df[col].astype('category')
 
 
+```
+4. For Label column encoding, we use MultilabelBinazer to turn our label to One-hot Encoding 
+```python
+# Creating list of labels
+labels_list = df['Workers']
+labels_list = list(labels_list)
+mlb = MultiLabelBinarizer()
+mlb.fit(labels_list)
+
+N_LABELS = len(mlb.classes_)
+for (i, label) in enumerate(mlb.classes_):
+    print("{}. {}".format(i, label))
+```
+
+5. Splitting The data to train and validate
+```python
+
+# Making the labels
+
+train, test = train_test_split(df, test_size=0.05)
+train, val = train_test_split(train, test_size=0.05)
+
+train_labels = train.pop('Workers')
+val_labels = val.pop('Workers')
+test_labels = test.pop('Workers')
+
+train_labels = list(train_labels)
+val_labels = list(val_labels)
+test_labels = list(test_labels)
+
+#Encode each Split Labels
+train_labels2 = mlb.transform(train_labels)
+val_labels2 = mlb.transform(val_labels)
+test_labels2 = mlb.transform(test_labels)
 ```
 
 
