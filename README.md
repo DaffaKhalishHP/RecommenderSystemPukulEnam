@@ -104,4 +104,50 @@ val_labels2 = mlb.transform(val_labels)
 test_labels2 = mlb.transform(test_labels)
 ```
 
+## Model Training and Evaluation
+
+### Model Training
+For Solving PukulEnam's problem we use Multi-label Classification that outputs each individual compatibility percentages, our model consist of 2 sequential Dense Layers, each layer uses Bias to capture relationships between inputs and outputs therefore increasing the Accuracy, first layer consist of 1000 Neuron, and second layer is 23 Neuron, same as total number of workers.
+
+```python
+# get the model
+def get_model(n_inputs, n_outputs):
+	model = tf.keras.Sequential()
+	model.add(tf.keras.layers.Dense(1000, input_dim=n_inputs,use_bias=True, kernel_initializer='he_uniform', activation='relu'))
+	model.add(tf.keras.layers.Dense(23, use_bias=True, activation='sigmoid'))
+	model.compile(loss='binary_crossentropy', optimizer='adam', metrics=tf.keras.metrics.Precision()
+    )
+	return model
+
+#Getting the shape of data 
+n_inputs, n_outputs = train.shape[1], train_labels2.shape[1]
+# get model
+model = get_model(n_inputs, n_outputs)
+
+#Train the data
+
+# using val set
+model.fit(x=train, y=train_labels2, validation_data=(val, val_labels2), epochs=20, verbose=1)
+
+# Evaluating the model using the test set
+loss, accuracy = model.evaluate(x=test, y=test_labels2)
+print("Accuracy", accuracy)
+```
+
+
+For First Layer activation we used Relu, the reason being is to filter out unrelated feature for each input to get more accurate output, for the second layer activation we used Sigmoid, the reason being is to give the output estimate from 0-1 (In this example is 0-100%) 
+
+![Precision Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/39a39f9e-0012-446f-a9a2-c1b26fef5eaf)
+
+To Compile the model we use Binary Crossentropy with Adam Optimizer, to calculate the metrics we use default Precision Metrics from tensorflow, the reason is we want the model can label True Positive more and we want to compare it to True Negative
+
+We Measure other Metrics such as F1 Score and Recall
+
+![F1 Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/7280b32b-39b8-4edf-a744-1a04b806237e)
+
+![Recall Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/77b6433b-1d9e-44ce-aa02-531a194c9ac0)
+
+
+
+
 
