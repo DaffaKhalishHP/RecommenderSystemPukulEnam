@@ -37,9 +37,37 @@ Data Preprocessing can be achieve using some Python Library such as:
 df = pd.read_csv(r".\datadummy50k_new_grouped.csv")
 # Cleaning the unused columns
 df = df.drop(df.columns[[0]], axis=1) 
+```
+
+2. Then We Transform the Workers from strings to list, and renaming the other columns
+```python 
+# Transform 'Workers' from strings into lists
+df['Workers'] = df['Workers'].str.replace("[\'\[\]]","",regex=True)
+df['Workers'] = df['Workers'].str.replace(", ","|",regex=True)
+df['Workers'] = df['Workers'].apply(lambda s: [l for l in str(s).split('|')])
+
+df.rename(columns={'Project Type': 'Project_Type'}, inplace=True)
+df.rename(columns={'Sub Topic': 'Sub_Topic'}, inplace=True)
+
+```
+
+3. For encoding the strings column into interger we use enumerate whole categorical columns and transform it to interger, the other columns will be transform into strings
+
+````python
+top_dict = dict(enumerate(df["Topics"].astype('category').cat.categories))
+subtop_dict = dict(enumerate(df["Sub_Topic"].astype('category').cat.categories))
+ptype_dict = dict(enumerate(df["Project_Type"].astype('category').cat.categories))
+
+# Transform columns from string into integer
+string_col = ['Topics', 'Sub_Topic', 'Project_Type']
+for col in string_col:
+  df[col] = df[col].astype('category').cat.codes
+
+# Transform other columns into strings
+for col in string_col:
+  df[col] = df[col].astype('category')
 
 
-
-
+```
 
 
