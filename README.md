@@ -137,15 +137,18 @@ print("Accuracy", accuracy)
 
 For First Layer activation we used Relu, the reason being is to filter out unrelated feature for each input to get more accurate output, for the second layer activation we used Sigmoid, the reason being is to give the output estimate from 0-1 (In this example is 0-100%) 
 
-![Precision Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/39a39f9e-0012-446f-a9a2-c1b26fef5eaf)
+![Precision Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/9d551e1d-49b1-487a-835b-198ed9c0a459)
 
 To Compile the model we use Binary Crossentropy with Adam Optimizer, to calculate the metrics we use default Precision Metrics from tensorflow, the reason is we want the model can label True Positive more and we want to compare it to True Negative
 
 We Measure other Metrics such as F1 Score and Recall
 
-![F1 Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/7280b32b-39b8-4edf-a744-1a04b806237e)
+![F1 Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/01a84710-ed6e-4ead-8ea4-279a9faada46)
 
-![Recall Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/77b6433b-1d9e-44ce-aa02-531a194c9ac0)
+![Recall Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/e8ba22a8-01b5-42ce-9f63-619a2b4a2db4)
+
+
+
 
 
 
