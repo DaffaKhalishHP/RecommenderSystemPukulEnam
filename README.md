@@ -9,15 +9,37 @@ PukulEnam offers a range of consulting services, including digital transformatio
 Due to the diversity of skills and varying availability of team members, team formation takes a significant amount of time and energy. To address this problem, our team has developed a Recommender System using machine learning. This system automates the team formation process and provides a compatibility percentage for each team member based on their current availability and the client's needed skill.
 
 
-## Objective 
+## Objective
 
-The objectives of this project are :
+The Team Formation Recommender System aims to automate the team formation process by considering factors such as past projects, individual skill sets, and availability. It offers the following functionalities:
 
-1. Automated Team Formation: The recommender system automates the team formation process by analyzing past projects, individual skill sets, and availability. It eliminates the need for manual selection and reduces the time and effort required by project managers.
-2. Fit Assessment: The system provides an estimate of how well each individual fits the client's needs based on their skill sets in percentages. This assessment helps project managers identify the most suitable team members for a the given project.
-3. Real-Time Availability Updates: The availability of each individual is continuously updated in the system. When a project is taken or completed, project managers can easily access the updated availability status and contact the relevant team members accordingly.
+1. Automated Team Formation: The system streamlines the team formation process by leveraging information from past projects, individual skill sets, and availability. This automation reduces the burden on project managers and saves time and effort.
+2. Fit Estimation: The recommender system provides an estimate of how well each individual aligns with the client's requirements based on their skill sets. This assessment assists project managers in identifying the most suitable team members for a specific project.
+3. Real-Time Availability Updates: The system enables project managers to easily update the availability status of each individual. As projects are taken or completed, the availability information can be promptly modified, facilitating efficient communication and coordination.
 
-## Data 
-PukulEnam provides real past projects data, however after consideration our team decided to make a dummy data consist of 50.000 rows of past project data to train the model.
-The data consist of 4 Columns 
+## Installation
+
+## Data Collecting and Preprocessing
+PukulEnam provides real past projects data, however after consideration our team decided to make a dummy data consist of 50.000 rows of past project data to train the model. The dataset comprises four columns of features: Topics, Subtopics, Difficulty, and Project Type. Additionally, there is a label column called Workers. But in the future development project manager can do transfer learning to fit real-life data for more accurate prediction.
+
+Data Preprocessing can be achieve using some Python Library such as:
+- Pandas (For pre-processing data from imported CSV)
+- SKLearn Model_Selection (For splitting train,validation and test data)
+- SKLearn Preprocessing (For Encoding the label into One-Hot Code)
+- Numpy (For transform shape of data)
+- Tensorflow (For Creating Model and Dense Layer)
+
+### Steps of Preprocessing Data
+
+1. First load the Data CSV and Remove the unused column 
+```python
+# Load The CSV
+df = pd.read_csv(r".\datadummy50k_new_grouped.csv")
+# Cleaning the unused columns
+df = df.drop(df.columns[[0]], axis=1) 
+
+
+
+
+
 
