@@ -9,3 +9,10 @@ PukulEnam offers a range of consulting services, including digital transformatio
 Due to the diversity of skills and varying availability of team members, team formation takes a significant amount of time and energy. To address this problem, our team has developed a Recommender System using machine learning. This system automates the team formation process and provides a compatibility percentage for each team member based on their current availability and the client's needed skill.
 
 
+## Objective 
+
+The objectives of this project are :
+
+1. Automated Team Formation: The recommender system automates the team formation process by analyzing past projects, individual skill sets, and availability. It eliminates the need for manual selection and reduces the time and effort required by project managers.
+2. Fit Assessment: The system provides an estimate of how well each individual fits the client's needs based on their skill sets in percentages. This assessment helps project managers identify the most suitable team members for a the given project.
+3. Real-Time Availability Updates: The availability of each individual is continuously updated in the system. When a project is taken or completed, project managers can easily access the updated availability status and contact the relevant team members accordingly.
