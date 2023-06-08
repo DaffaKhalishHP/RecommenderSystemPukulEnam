@@ -16,3 +16,8 @@ The objectives of this project are :
 1. Automated Team Formation: The recommender system automates the team formation process by analyzing past projects, individual skill sets, and availability. It eliminates the need for manual selection and reduces the time and effort required by project managers.
 2. Fit Assessment: The system provides an estimate of how well each individual fits the client's needs based on their skill sets in percentages. This assessment helps project managers identify the most suitable team members for a the given project.
 3. Real-Time Availability Updates: The availability of each individual is continuously updated in the system. When a project is taken or completed, project managers can easily access the updated availability status and contact the relevant team members accordingly.
+
+## Data 
+PukulEnam provides real past projects data, however after consideration our team decided to make a dummy data consist of 50.000 rows of past project data to train the model.
+The data consist of 4 Columns 
+
