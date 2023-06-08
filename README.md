@@ -2,8 +2,10 @@
 
 ## Project Description
 
-Making a team formation that fit project needed skills takes a lot of time for project manager, there are a lot things to consider like Interpersonal Relationship, Individual Capabilities and also Current Availibility of each individual workers. Pukul Enam an AI Consulting services company face this challenges too, the process of team formation takes up much of the project manager times to ask each individual availibility, looks through their past project experiences to confirm that they fit the project client's need. 
+Team formation for projects often requires significant time and effort from project managers. Various factors such as interpersonal relationships, individual capabilities, and current availability of team members need to be considered. PukulEnam, an AI consulting services company, also faces these challenges in their project management process. The team formation process involves checking individual availability, reviewing past project experiences, and ensuring a good fit for the client's needs.
 
-Pukul Enam offers several consulting services including digital transformation for companies and business, data transformation, artificial intelligence technology development. This makes Pukul Enam Talent's has wide varieties of skills inlucing Website Development including Back-end and Front-end, Cloud Engineering, Technical Writing, Data Science and Data Analytics that consist of 12 Current Talents.
+PukulEnam offers a range of consulting services, including digital transformation, data transformation, and artificial intelligence technology development. As a result, the company has a diverse pool of talent with skills in website development (back-end and front-end), cloud engineering, technical writing, data science, and data analytics. Currently, there are 12 talented individuals in the company.
 
-Having such diverse talents skill and different availibility makes team forming take a lot of time and energy, therefore Our team made
+Due to the diversity of skills and varying availability of team members, team formation takes a significant amount of time and energy. To address this problem, our team has developed a Recommender System using machine learning. This system automates the team formation process and provides a compatibility percentage for each team member based on their current availability and the client's needed skill.
+
+
