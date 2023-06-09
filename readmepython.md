@@ -88,7 +88,7 @@ test_labels2 = mlb.transform(test_labels)
 ## Model Training and Evaluation
 
 ### Model Training
-For Solving PukulEnam's problem we use Multi-label Classification that outputs each individual compatibility percentages, our model consist of 2 sequential Dense Layers, each layer uses Bias to capture relationships between inputs and outputs therefore increasing the Accuracy, first layer consist of 1000 Neuron, and second layer is 23 Neuron, same as total number of workers.
+To address PukulEnam's challenge, we employ a Multi-label Classification approach to determine individual compatibility percentages. Our model comprises two sequential Dense Layers, utilizing Bias to capture input-output relationships and enhance accuracy. The first layer consists of 1000 Neurons, while the second layer has 23 Neurons, matching the total number of workers.
 
 ```python
 # get the model
@@ -120,9 +120,9 @@ For First Layer activation we used Relu, the reason being is to filter out unrel
 
 ![Precision Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/9d551e1d-49b1-487a-835b-198ed9c0a459)
 
-To Compile the model we use Binary Crossentropy with Adam Optimizer, to calculate the metrics we use default Precision Metrics from tensorflow, the reason is we want the model can label True Positive more and we want to compare it to True Negative
+We compile the model using the Binary Crossentropy loss function and the Adam optimizer. For evaluating the model, we use the default Precision metric provided by TensorFlow. This choice is motivated by our objective to prioritize the accurate labeling of True Positives, and we also consider comparing this metric to True Negatives.
 
-We Measure other Metrics such as F1 Score and Recall
+While we do measure other metrics such as F1 Score and Recall, we have determined that they are not our primary focus. Instead, we place greater emphasis on the Precision metric and comparing it to the True Negatives. By prioritizing Precision, we aim to optimize the accurate identification of True Positives in our model's predictions.
 
 ![F1 Score Metrics](https://github.com/DaffaKhalishHP/RecommenderSystemPukulEnam/assets/72967822/01a84710-ed6e-4ead-8ea4-279a9faada46)
 
